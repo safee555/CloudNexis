@@ -13,221 +13,316 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap" rel="stylesheet">
 
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Montserrat', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 25px 15px;
+            text-transform: capitalize;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2vh;
+        }
+
+        .connect {
+            text-align: center;
+            font-size: 2vmin;
+        }
+
+        .myself {
+            border-style: solid;
+            border-color: rgb(0, 0, 0);
+            border-radius: 100%;
+            width: 30vh;
+            height: auto;
+            max-width: 100%;
+        }
+
+        .centre {
+            text-align: center;
+        }
+
+        .images {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .images a {
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            margin: 5px; /* Adjust spacing as needed */
+        }
+
+        .images a:hover img {
+            transform: scale(1.1); /* Increase the scale for a "pop-up" effect */
+        }
+
+        /* Style the images */
+        .images img {
+            width: 5vmax;
+            transition: transform 0.3s ease; /* Add a smooth transition effect */
+            
+        }
+
+        .cloud-logos {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Apply the hover effect to the images inside the links */
+        .cloud-logos a {
+            display: contents;
+            position: relative;
+            margin-right: auto; /* Adjust spacing as needed */
+        }
+
+        .cloud-logos a:hover img {
+            transform: scale(1.1); /* Increase the scale for a "pop-up" effect */
+        }
+
+        /* Style the images */
+        .cloud-logos img {
+            max-width: 100%; /* Ensure images don't exceed their container */
+            transition: transform 0.05s ease; /* Add a smooth transition effect */
+        }
+
+        .a {
+            font-size: 1.8vmax;
+            font-weight: bolder;
+            text-decoration: double;
+            color: white;
+            text-align: center;
+            text-transform: capitalize;
+            transition: transform 0.3s ease, color 0.3s ease;
+            
+        }
+
+        .a:hover {
+            transform: scale(1.1);
+            color: #007bff;
+        }
+
+        .discription { 
+            font-size: 1.8vmax;
+            text-decoration: double;
+            color: rgb(252, 252, 252);
+            text-align: center;
+            text-transform: capitalize;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        
+        .discription:hover {
+            transform: scale(2.2);
+            color: #007bff;
+            }
+
+        .b {
+            font-size: 3vmin;
+            color: rgb(255, 255, 255);
+            text-align: center;
+        }
+
+        .c {
+            font-size: 0.8vmax;
+            color: rgb(247, 246, 246);
+            text-align: center;
+            text-decoration: underline;
+        }
+
+        .d {
+            font-size: 1.5vmax;
+            color: rgb(255, 255, 255);
+            text-align: left;
+        }
+
+        footer {
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            text-align: center;
+        }
+
+        /* Media Queries */
+        @media screen and (max-width: 768px) {
+            .a {
+                font-size: 4vmax;
+            }
+
+            .b {
+                font-size: 4vmin;
+            }
+
+           
+        }
+
+        @media screen and (max-width: 480px) {
+            .a {
+                font-size: 3vmax;
+            }
+
+            .b {
+                font-size: 3vmin;
+            }
+
+            .images img,
+            img, .cloud-logos img {
+                width: 20fr;
+            }
+
+        }
+    </style>
 </head>
-<style>
-    
-    * {
-        margin: 0;
-        padding: 0;
-    }
-
-    nav ul li {
-        display: inline-block;
-        margin: 25px 15px;
-        text-transform: capitalize;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: 2vh;
-
-    }
-
-   
-
-    body {
-        background-image: url('background.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-attachment: fixed;
-    }
-
-    .connect {
-        text-align: center;
-        font-family: Arial, Helvetica, sans-serif;
-        color: white;
-        font-size: 2vmin;
-    }
-
-    .myself {
-        border-style: solid;
-        border-color: rgb(0, 0, 0);
-        border-radius: 100%;
-        width: 30vh;
-        height: auto;
-    }
-
-    .centre {
-        text-align: center;
-    }
-
-    .images {
-        text-align: center; display: block;
-    }
-
-    .cloud-logos {
-        text-align: center; display: block; 
-    }
-    
-
-    .a {
-        font-size: 2vmax;
-        font-weight: bolder;
-        text-decoration: double;
-        font-family: 'Montserrat', sans-serif;
-        color: white;
-        text-align: center;
-        text-transform: capitalize;
-    }
-
-    .b {
-        font-size: 3vmin;
-        font-family: 'Montserrat', 'sans-serif';
-        color: rgb(255, 255, 255);
-        text-align: center;
-    }
-
-    .c {
-        font-size: 0.8vmax;
-        color: rgb(247, 246, 246);
-        text-align: center;
-        text-decoration: underline;
-
-    }
-
-    .d {
-        font-size: 1.5vmax;
-        color: rgb(255, 255, 255);
-        text-align: left;
-    }
-
-    footer {
-        left: 0;
-        bottom: 0;
-        width: 100%;
-        background-color: rgb(0, 0, 0);
-        color: white;
-        text-align: center;
-    }
-</style>
 
 <body>
+    <body>
    
-    <br>
-    <br>
-    <br>
-    
-    
-    <span class="a">
-        <header>
-            <h1> CloudVista </h1>
-            <p> Shaping Tomorrow's Success in the Cloud </p>
-        </header>
-    </span>
-
-    <div class="cloud-logos">
+        <br>
+        <br>
+        <br>
         
-        <a href="https://azure.microsoft.com/en-in/" target= "blank"> <img src="Logos\Azure.png" style="margin-right: 25px;" width="200vmax"> </a>
-        <a href="https://aws.amazon.com/" target= "blank"> <img src="Logos\AWS.png" width="60vmax"> </a>
-    </div>
-    
-    <br><br>
-    
-    <span class="b">
-        <h2> This is Syed Safee</h2>
-    </span> <br>
-    
-    <div class="centre"> <img src="my pic\safee.jpg" alt="Myself"
-            class="myself"> </div>
-    <br>
-
-    <div class="c">
-        <p>  <h1> CloudVista: Your Cloud Transformation Partner </h1> </p>  <br> </div>
         
-        <div class="d">
-        <p>
-            Welcome to CloudVista, where your cloud aspirations meet expert solutions. I'm Syed Safee, an Azure admin and seasoned cloud solution provider passionate about navigating businesses through the dynamic landscapes of Microsoft Azure and AWS. 
+        <span class="a">
+            <header style="text-align: center">
+                <h1> CloudVista </h1>
+            </header>
+        
+        </span>
+        <span class="discription"> 
+             <p> Shaping Tomorrow's Success in the Cloud </p> 
+            </span>
             <br>
-            <br>
-            <br>
-
-            Why CloudVista?
-            <br><br>
-            At CloudVista, we recognize that the cloud journey is unique for every business. As your dedicated partner, we specialize in deciphering the intricacies of Microsoft Azure and AWS, offering tailored solutions that address your specific needs.
-            <br>
-            <br>
-            <br>
-
-            Our Expertise
-            <br><br>
-            With in-depth knowledge of Microsoft Azure and AWS, CloudVista stands at the intersection of experience and innovation. As an Azure admin, I bring hands-on proficiency to the table, ensuring your projects benefit from the best practices and insights in the cloud domain.
-            <br>
-            <br>
-            <br>
-
-            What Sets CloudVista Apart?
-            <br><br>
-            Dual Cloud Proficiency: CloudVista understands both Microsoft Azure and AWS, enabling seamless transitions, migrations, and optimizations tailored to your business requirements.
-            <br>
-
-            End-to-End Solutions: From troubleshooting cloud challenges to orchestrating smooth migrations from AWS or on-premises environments to Azure, CloudVista is your comprehensive cloud transformation partner.
-            <br>
-
-            Client-Centric Approach: At CloudVista, we prioritize your unique needs. Our collaborative process ensures that your vision aligns seamlessly with the power and flexibility of cloud technologies.
-            <br>
-            <br>
-            <br>
-
-            Services Offered by CloudVista
-            <br>
-            <br>
-            Cloud Migration: Effortlessly move from on-premises or AWS to Azure with CloudVista's expert guidance.
-            <br>
-            Troubleshooting: Facing cloud challenges? CloudVista provides timely and effective solutions to keep your operations running smoothly.
-            <br>
-            Optimization Strategies: Already on Azure? Let CloudVista fine-tune your environment for maximum performance, cost-effectiveness, and scalability.
-            <br>
-            <br>
-            <br>
-
-            Empower Your Cloud Journey with CloudVista
-            <br><br>
-            Embark on a transformative cloud journey with CloudVista. I, Syed Safee, and the CloudVista team are dedicated to turning your cloud visions into reality. Your success in the cloud is not just a goal; it's our commitment.
-            <br>
-           
-            Ready to elevate your cloud experience? Contact CloudVista today, and let's embark on a journey of innovation and efficiency in the cloud.
-             </p>
-    </div>
-    <br>
-    <br>
-    <br>
-    <div class="connect"> Click Below to Connect With Me </div>
-    <br>
-
-    <div class="images">
-        <div class="images">
-            <a href="https://www.instagram.com/iamsafee_/" target="_blank">
-                <img src="Logos\InstaLogo.png" alt="Instagram Link" width="50vmax">
-            </a>
+    
+        <div class="cloud-logos">
             
-            <a href="https://www.facebook.com/syed.safee.7" target="_blank">
-                <img src="Logos\logo-facebookpng-32204.png" alt="Facebook" width="50vmax">
-            </a>
-            
-            <a href="https://www.linkedin.com/in/syed-safee/" target="_blank">
-                <img src="Logos\linkedin-logo-png-2026.png" alt="LinkedIn" width="50vmax">
-            </a>
-            
-            <a href="https://twitter.com/i_am_safee" target="_blank">
-                <img src="Logos\twitter.png" alt="Twitter" width="50vmax">
-            </a>
+            <a href="https://azure.microsoft.com/en-in/" target= "blank"> <img src="Logos\Azure.png" style="margin-right: 25px;" width="25%"> </a>
+            <a href="https://aws.amazon.com/" target= "blank"> <img src="Logos\AWS.png" width="10%"> </a>
         </div>
         
+        <br><br>
+        
+        <span class="b">
+            <h2> This is Syed Safee</h2>
+        </span> <br>
+        
+        <div class="centre"> <img src="my pic\safee.jpg" alt="Myself"
+                class="myself"> </div>
         <br>
-
-    </div>
-    <br> <br> <br> <br> <br> <br>
-
-    <footer> All Rights Reserved </footer>
-
-</body>
+    
+        <div class="c">
+            <p>  <h1> CloudVista: Your Cloud Transformation Partner </h1> </p>  <br> </div>
+            
+            <div class="d">
+            <p>
+                Welcome to CloudVista, where your cloud aspirations meet expert solutions. I'm Syed Safee, an Azure admin and seasoned cloud solution provider passionate about navigating businesses through the dynamic landscapes of Microsoft Azure and AWS. 
+                <br>
+                <br>
+                <br>
+    
+                Why CloudVista?
+                <br><br>
+                At CloudVista, we recognize that the cloud journey is unique for every business. As your dedicated partner, we specialize in deciphering the intricacies of Microsoft Azure and AWS, offering tailored solutions that address your specific needs.
+                <br>
+                <br>
+                <br>
+    
+                Our Expertise
+                <br><br>
+                With in-depth knowledge of Microsoft Azure and AWS, CloudVista stands at the intersection of experience and innovation. As an Azure admin, I bring hands-on proficiency to the table, ensuring your projects benefit from the best practices and insights in the cloud domain.
+                <br>
+                <br>
+                <br>
+    
+                What Sets CloudVista Apart?
+                <br><br>
+                Dual Cloud Proficiency: CloudVista understands both Microsoft Azure and AWS, enabling seamless transitions, migrations, and optimizations tailored to your business requirements.
+                <br>
+    
+                End-to-End Solutions: From troubleshooting cloud challenges to orchestrating smooth migrations from AWS or on-premises environments to Azure, CloudVista is your comprehensive cloud transformation partner.
+                <br>
+    
+                Client-Centric Approach: At CloudVista, we prioritize your unique needs. Our collaborative process ensures that your vision aligns seamlessly with the power and flexibility of cloud technologies.
+                <br>
+                <br>
+                <br>
+    
+                Services Offered by CloudVista
+                <br>
+                <br>
+                Cloud Migration: Effortlessly move from on-premises or AWS to Azure with CloudVista's expert guidance.
+                <br>
+                Troubleshooting: Facing cloud challenges? CloudVista provides timely and effective solutions to keep your operations running smoothly.
+                <br>
+                Optimization Strategies: Already on Azure? Let CloudVista fine-tune your environment for maximum performance, cost-effectiveness, and scalability.
+                <br>
+                <br>
+                <br>
+    
+                Empower Your Cloud Journey with CloudVista
+                <br><br>
+                Embark on a transformative cloud journey with CloudVista. I, Syed Safee, and the CloudVista team are dedicated to turning your cloud visions into reality. Your success in the cloud is not just a goal; it's our commitment.
+                <br>
+               
+                Ready to elevate your cloud experience? Contact CloudVista today, and let's embark on a journey of innovation and efficiency in the cloud.
+                 </p>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="connect"> Click Below to Connect With Me</div>
+        <br>
+    
+        <div class="images">
+            <div class="images">
+                <a href="https://www.instagram.com/iamsafee_/" target="_blank">
+                    <img src="Logos\InstaLogo.png" alt="Instagram Link" width="50vmax">
+                </a>
+                
+                <a href="https://www.facebook.com/syed.safee.7" target="_blank">
+                    <img src="Logos\logo-facebookpng-32204.png" alt="Facebook" width="50vmax">
+                </a>
+                
+                <a href="https://www.linkedin.com/in/syed-safee/" target="_blank">
+                    <img src="Logos\linkedin-logo-png-2026.png" alt="LinkedIn" width="50vmax">
+                </a>
+                
+                <a href="https://twitter.com/i_am_safee" target="_blank">
+                    <img src="Logos\twitter.png" alt="Twitter" width="50vmax">
+                </a>
+            </div>
+            
+            <br>
+    
+        </div>
+        <br> <br> <br> <br> <br> <br>
+    
+        <footer> All Rights Reserved </footer>
+    
+    </body>
 
 </html>
