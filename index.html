@@ -266,58 +266,60 @@
     <video class="video-fade active" id="vid1" autoplay muted playsinline></video>
     <video class="video-fade" id="vid2" autoplay muted playsinline></video>
   </div>
+<script>
+  const splash = document.getElementById("splash");
+  const video1 = document.getElementById("vid1");
+  const video2 = document.getElementById("vid2");
 
-  <script>
-    const splash = document.getElementById("splash");
-    const video1 = document.getElementById("vid1");
-    const video2 = document.getElementById("vid2");
-    const videoList = [
-      "Video\keyboard.mp4",
-      "Video\Robot.mp4",
-      "Video\pexels-kindel-media-7649283 (2160p).mp4"
-    ];
-    let current = 0, active = video1, next = video2;
+  const videoList = [
+    "Video/keyboard.mp4",
+    "Video/Robot.mp4",
+    "Video/pexels-kindel-media-7649283 (2160p).mp4"
+  ];
 
-    function transitionToNext() {
-      next.src = videoList[(current + 1) % videoList.length];
-      next.load();
-      next.oncanplay = () => {
-        next.play();
-        next.classList.add("active");
-        active.classList.remove("active");
-        const temp = active;
-        active = next;
-        next = temp;
-        current = (current + 1) % videoList.length;
-        active.removeEventListener("timeupdate", monitorProgress);
-        active.addEventListener("timeupdate", monitorProgress);
-      };
+  let current = 0, active = video1, next = video2;
+
+  function transitionToNext() {
+    next.src = videoList[(current + 1) % videoList.length];
+    next.load();
+    next.oncanplay = () => {
+      next.play();
+      next.classList.add("active");
+      active.classList.remove("active");
+      const temp = active;
+      active = next;
+      next = temp;
+      current = (current + 1) % videoList.length;
+      active.removeEventListener("timeupdate", monitorProgress);
+      active.addEventListener("timeupdate", monitorProgress);
+    };
+  }
+
+  function monitorProgress() {
+    if (active.duration && active.currentTime >= active.duration - 3) {
+      active.removeEventListener("timeupdate", monitorProgress);
+      transitionToNext();
     }
+  }
 
-    function monitorProgress() {
-      if (active.duration && active.currentTime >= active.duration - 3) {
-        active.removeEventListener("timeupdate", monitorProgress);
-        transitionToNext();
-      }
-    }
-
-    window.addEventListener("load", () => {
-      video1.src = videoList[0];
-      video1.load();
-      video1.classList.add("active");
-      video1.addEventListener("canplay", () => {
-        video1.play();
-        video1.addEventListener("timeupdate", monitorProgress);
-      });
-
-      const mainContent = document.querySelector("main");
-      setTimeout(() => {
-        splash.classList.add("hide-splash");
-        mainContent.classList.add("main-visible");
-      }, 2500);
+  window.addEventListener("load", () => {
+    video1.src = videoList[0];
+    video1.load();
+    video1.classList.add("active");
+    video1.addEventListener("canplay", () => {
+      video1.play();
+      video1.addEventListener("timeupdate", monitorProgress);
     });
-  </script>
-<header>
+
+    const mainContent = document.getElementById("mainContent");
+    setTimeout(() => {
+      splash.classList.add("hide-splash");
+      mainContent.classList.add("main-visible");
+    }, 2500);
+  });
+</script>
+
+  <header>
   <img class="logo" src="Logos\cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo" />
   <nav>
     <a href="#">Home</a>
