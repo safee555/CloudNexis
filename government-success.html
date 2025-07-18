@@ -1,0 +1,117 @@
+<!-- Government Success Story -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Government Success - CloudNexis</title>
+  <link rel="icon" type="image/x-icon" href="Logos/favicon-square.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-container img {
+      width: 200px;
+      filter: drop-shadow(0 0 25px #00aaff);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    h1 {
+      color: #00aaff;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    img.story-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-container">
+    <img src="Logos/cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo">
+  </div>
+
+  <div class="content">
+    <h1>Government Department - Success Story</h1>
+    <img class="story-img" src="Website-Images/Government.jpg" alt="Government Sector" />
+    <p>
+      A state government IT department was struggling to manage citizen service portals due to outdated on-prem infrastructure. Frequent downtimes led to delays in issuing certificates and licenses. Citizens complained heavily.
+    </p>
+    <p>
+      They had no automated failover, backups were manual, and data was not encrypted at rest. The lack of monitoring also meant critical issues went undetected.
+    </p>
+    <p>
+      <strong>CloudNexis</strong> executed a 3-phase Azure migration:
+      <ul>
+        <li>Lift-and-shift to Azure Virtual Machines + SQL Managed Instance</li>
+        <li>Implemented Azure Monitor, Log Analytics, and Recovery Vault</li>
+        <li>Setup NSGs, RBAC and secure VNET peering</li>
+      </ul>
+    </p>
+    <p>
+      Post-migration, the SLA improved drastically and end-user satisfaction grew. Department heads now get real-time dashboards and daily uptime reports — reducing complaints by 80%.
+    </p>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+</body>
+
+</html>

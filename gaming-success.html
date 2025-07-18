@@ -1,0 +1,117 @@
+<!-- Gaming Success Story -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Success - CloudNexis</title>
+  <link rel="icon" type="image/x-icon" href="Logos/favicon-square.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: black;
+      font-family: 'Montserrat', sans-serif;
+      color: white;
+      padding: 40px 20px;
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-container img {
+      width: 200px;
+      filter: drop-shadow(0 0 25px #00aaff);
+    }
+
+    .content {
+      max-width: 900px;
+      margin: auto;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 30px;
+      border-radius: 16px;
+      animation: fadeIn 1.5s ease-in forwards;
+    }
+
+    h1 {
+      color: #00aaff;
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    img.story-img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 30px;
+      color: #00aaff;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="logo-container">
+    <img src="Logos/cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo">
+  </div>
+
+  <div class="content">
+    <h1>Gaming Industry - Success Story</h1>
+    <img class="story-img" src="Website-Images/gaming.jpg" alt="Gaming Sector" />
+    <p>
+      A leading mobile gaming startup was facing severe server lag and resource throttling during peak gameplay hours. Users were experiencing disconnections, high latency, and poor reviews started affecting app store rankings.
+    </p>
+    <p>
+      The company’s AWS-based architecture was not optimized. Costs were rising, yet performance remained poor due to improper autoscaling, lack of CDN, and missing load balancers.
+    </p>
+    <p>
+      <strong>CloudNexis</strong> stepped in to redesign the infrastructure:
+      <ul>
+        <li>Configured EC2 with proper autoscaling groups</li>
+        <li>Deployed AWS CloudFront for global content delivery</li>
+        <li>Implemented a hybrid Redis + Aurora DB layer to reduce read latency</li>
+      </ul>
+    </p>
+    <p>
+      Within a week, the server uptime improved from 89% to 99.99% and app ratings jumped. The startup was able to retain its customer base and launch its next multiplayer feature confidently.
+    </p>
+    <a class="back-link" href="index.html">← Back to Home</a>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!-- retail-success.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Retail Industry - CloudNexis</title>
+  <link rel="icon" type="image/x-icon" href="Logos/favicon-square.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background-color: black;
+      color: white;
+    }
+    .logo-container {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .logo-container img {
+      width: 200px;
+      filter: drop-shadow(0 0 25px #00aaff);
+    }
+    .success-img {
+      display: block;
+      width: 90%;
+      max-width: 600px;
+      margin: 20px auto;
+      border-radius: 16px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .success-img.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .content {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      line-height: 1.8;
+      font-size: 1.1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1.5s ease, transform 1.5s ease;
+    }
+    .content.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    h1 {
+      text-align: center;
+      color: #00aaff;
+    }
+    .back-link {
+      display: block;
+      text-align: center;
+      margin: 40px 0;
+      color: #00aaff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="Logos/cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo">
+  </div>
+
+  <h1>Retail Industry - AI Based Inventory Optimization</h1>
+  <img src="Website-Images/Retail.jpg" class="success-img" id="successImage" alt="Retail">
+
+  <div class="content" id="contentBlock">
+    <p>
+      A growing retail chain was facing unpredictable stock levels and excess warehouse costs due to manual forecasting. Their regional stores were often out of fast-moving items.
+    </p>
+    <p>
+      <strong>CloudNexis</strong> deployed <strong>AWS Lambda</strong> and <strong>Amazon Forecast</strong> for predictive analytics. Data from POS systems was synced to <strong>Amazon S3</strong> for training, and dashboards were created in <strong>QuickSight</strong> for managers.
+    </p>
+    <p>
+      The result was a 35% reduction in overstock, a 25% improvement in item availability, and millions saved in operational logistics. Customer experience in stores dramatically improved.
+    </p>
+  </div>
+
+  <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+  <script>
+    window.addEventListener("load", () => {
+      document.getElementById("contentBlock").classList.add("visible");
+      document.getElementById("successImage").classList.add("visible");
+    });
+  </script>
+</body>
+</html>
