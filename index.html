@@ -394,14 +394,14 @@ nav a:hover {
     <video class="video-fade" id="vid2" autoplay muted playsinline></video>
   </div>
 
-  <script>
+<script>
   const splash = document.getElementById("splash");
   const video1 = document.getElementById("vid1");
   const video2 = document.getElementById("vid2");
 
   const videoList = [
     "Video/keyboard.mp4",
-    "Video/pexels-kindel-media-7649283 (2160p).mp4",
+    "Video/pexels-kindel-media-7649283-2160p.mp4",  // Remove space and parentheses in filename
     "Video/ARvideo.mp4",
     "Video/Robot1.mp4"
   ];
@@ -410,7 +410,6 @@ nav a:hover {
   let active = video1;
   let next = video2;
 
-  // Main logic to fade out current and fade in next video
   function transitionToNext() {
     const nextIndex = (current + 1) % videoList.length;
     next.src = videoList[nextIndex];
@@ -421,32 +420,31 @@ nav a:hover {
       next.classList.add("active");
       active.classList.remove("active");
 
-      // Swap the videos
+      // Swap roles
       [active, next] = [next, active];
       current = nextIndex;
 
-      // Reset listeners
+      // Safely attach the listener again for the new active video
       active.removeEventListener("timeupdate", monitorProgress);
       active.addEventListener("timeupdate", monitorProgress);
     };
   }
 
-  // Check if current video is nearing end, then start next
   function monitorProgress() {
     if (active.duration && active.currentTime >= active.duration - 3) {
-      active.removeEventListener("timeupdate", monitorProgress);
-      transitionToNext();
+      transitionToNext(); // No need to remove listener here
     }
   }
 
-  // On page load
   window.addEventListener("load", () => {
     video1.src = videoList[0];
     video1.load();
 
     video1.oncanplay = () => {
       video1.play();
-      video1.addEventListener("timeupdate", monitorProgress);
+      active = video1;
+      video1.classList.add("active");
+      active.addEventListener("timeupdate", monitorProgress);
     };
 
     const mainContent = document.getElementById("mainContent");
