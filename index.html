@@ -400,7 +400,6 @@ nav a:hover {
   const video2 = document.getElementById("vid2");
 
   const videoList = [
-    
     "Video/keyboard.mp4",
     "Video/MotherBoard.mp4",
     "Video/pexels-kindel-media-7649283 (2160p).mp4",
@@ -409,24 +408,32 @@ nav a:hover {
     "Video/AI-Cheap.mov"
   ];
 
-  let current = 0, active = video1, next = video2;
+  let current = 0;
+  let active = video1;
+  let next = video2;
 
+  // Main logic to fade out current and fade in next video
   function transitionToNext() {
-    next.src = videoList[(current + 1) % videoList.length];
+    const nextIndex = (current + 1) % videoList.length;
+    next.src = videoList[nextIndex];
     next.load();
+
     next.oncanplay = () => {
       next.play();
       next.classList.add("active");
       active.classList.remove("active");
-      const temp = active;
-      active = next;
-      next = temp;
-      current = (current + 1) % videoList.length;
+
+      // Swap the videos
+      [active, next] = [next, active];
+      current = nextIndex;
+
+      // Reset listeners
       active.removeEventListener("timeupdate", monitorProgress);
       active.addEventListener("timeupdate", monitorProgress);
     };
   }
 
+  // Check if current video is nearing end, then start next
   function monitorProgress() {
     if (active.duration && active.currentTime >= active.duration - 3) {
       active.removeEventListener("timeupdate", monitorProgress);
@@ -434,14 +441,15 @@ nav a:hover {
     }
   }
 
+  // On page load
   window.addEventListener("load", () => {
     video1.src = videoList[0];
     video1.load();
-    video1.classList.add("active");
-    video1.addEventListener("canplay", () => {
+
+    video1.oncanplay = () => {
       video1.play();
       video1.addEventListener("timeupdate", monitorProgress);
-    });
+    };
 
     const mainContent = document.getElementById("mainContent");
     setTimeout(() => {
@@ -450,6 +458,7 @@ nav a:hover {
     }, 2500);
   });
 </script>
+
 
 <header>
   <img class="logo" src="Logos\cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo" />
