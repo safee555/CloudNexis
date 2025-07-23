@@ -432,6 +432,7 @@ nav a:hover {
 
   function monitorProgress() {
     if (active.duration && active.currentTime >= active.duration - 3) {
+      active.removeEventListener("timeupdate", monitorProgress); // critical fix
       transitionToNext(); // No need to remove listener here
     }
   }
