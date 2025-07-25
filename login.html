@@ -1,0 +1,207 @@
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - CloudNexis</title>
+  <link rel="icon" href="Logos/favicon-square.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: black;
+      overflow-x: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+    .video-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+    }
+    .auth-buttons a {
+      padding: 8px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      font-weight: bold;
+    }
+    .auth-buttons a:hover {
+      box-shadow: 0 0 12px #d400ff;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+      padding-bottom: 60px;
+    }
+    .container {
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      border-radius: 16px;
+      padding: 30px 20px;
+      max-width: 400px;
+      width: 90%;
+      color: white;
+      box-shadow: 0 0 30px rgba(255, 0, 150, 0.3);
+      text-align: center;
+    }
+    .logo {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid black;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      width: 100%;
+      padding: 12px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+    button:hover {
+      box-shadow: 0 0 10px #d400ff;
+      background: rgba(255, 255, 255, 0.2);
+    }
+    .google-signin {
+      margin-top: 15px;
+      background: white;
+      color: #333;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+    .google-signin img {
+      width: 20px;
+      height: 20px;
+    }
+    .bottom-text {
+      margin-top: 20px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #fff;
+    }
+    .bottom-text a {
+      color: #ff66cc;
+      text-decoration: none;
+      display: block;
+    }
+    .bottom-text a:hover {
+      text-decoration: underline;
+    }
+    .footer-social {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+    }
+    .footer-social img {
+      width: 36px;
+      height: 36px;
+      transition: transform 0.3s ease;
+    }
+    .footer-social img:hover {
+      transform: scale(1.3);
+    }
+    footer {
+      background: black;
+      text-align: center;
+      padding: 15px 10px;
+      color: white;
+      font-size: 0.9rem;
+    }
+    @media screen and (max-width: 480px) {
+      .container {
+        width: 90%;
+        margin-top: 20px;
+        padding: 20px 15px;
+      }
+      .logo {
+        width: 180px;
+      }
+      .footer-social img {
+        width: 32px;
+        height: 32px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <video class="video-background" autoplay muted loop>
+    <source src="Video/ARvideo.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+    </div>
+
+  <div class="main">
+    <div class="container">
+      <img src="Logos/cloudnexis-high-resolution-logo-transparent (1).png" alt="CloudNexis Logo" class="logo">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <button type="submit">Login</button>
+      <button class="google-signin">
+        <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google Logo"> Sign in with Google
+      </button>
+      <div class="bottom-text">
+        <a href="#">Forgot Password?</a>
+        <a href="signup.html">Don't have an account? Sign up here</a>
+      </div>
+    </div>
+
+    <div class="footer-social">
+      <a href="https://www.instagram.com/cloudnexis?igsh=MTZyOWJ6MXh0aWNwbw%3D%3D&utm_source=qr" target="_blank"><img src="Logos/Instagram-Colour.png" alt="Instagram"></a>
+      <a href="https://www.facebook.com/syed.safee.7" target="_blank"><img src="Logos/Facebook-Colour.png" alt="Facebook"></a>
+      <a href="https://www.linkedin.com/in/syed-safee/" target="_blank"><img src="Logos/LinkedIn-Colour.png" alt="LinkedIn"></a>
+      <a href="https://twitter.com/i_am_safee" target="_blank"><img src="Logos/Twitter-colour.png" alt="Twitter"></a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 CloudNexis. All Rights Reserved.
+  </footer>
+</body>
+</html>
