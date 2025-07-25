@@ -401,30 +401,23 @@ nav a:hover {
 
   const videoList = [
     "Video/keyboard.mp4",
-    "Video/pexels-kindel-media-7649283-2160p.mp4",  // Remove space and parentheses in filename
-    "Video/ARvideo.mp4",
-    "Video/Robot1.mp4"
+    "Video/pexels-kindel-media-7649283 (2160p).mp4",
+    "Video/ARvideo.mp4"
   ];
 
-  let current = 0;
-  let active = video1;
-  let next = video2;
+  let current = 0, active = video1, next = video2;
 
   function transitionToNext() {
-    const nextIndex = (current + 1) % videoList.length;
-    next.src = videoList[nextIndex];
+    next.src = videoList[(current + 1) % videoList.length];
     next.load();
-
     next.oncanplay = () => {
       next.play();
       next.classList.add("active");
       active.classList.remove("active");
-
-      // Swap roles
-      [active, next] = [next, active];
-      current = nextIndex;
-
-      // Safely attach the listener again for the new active video
+      const temp = active;
+      active = next;
+      next = temp;
+      current = (current + 1) % videoList.length;
       active.removeEventListener("timeupdate", monitorProgress);
       active.addEventListener("timeupdate", monitorProgress);
     };
@@ -432,21 +425,19 @@ nav a:hover {
 
   function monitorProgress() {
     if (active.duration && active.currentTime >= active.duration - 3) {
-      active.removeEventListener("timeupdate", monitorProgress); // critical fix
-      transitionToNext(); // No need to remove listener here
+      active.removeEventListener("timeupdate", monitorProgress);
+      transitionToNext();
     }
   }
 
   window.addEventListener("load", () => {
     video1.src = videoList[0];
     video1.load();
-
-    video1.oncanplay = () => {
+    video1.classList.add("active");
+    video1.addEventListener("canplay", () => {
       video1.play();
-      active = video1;
-      video1.classList.add("active");
-      active.addEventListener("timeupdate", monitorProgress);
-    };
+      video1.addEventListener("timeupdate", monitorProgress);
+    });
 
     const mainContent = document.getElementById("mainContent");
     setTimeout(() => {
@@ -455,6 +446,7 @@ nav a:hover {
     }, 2500);
   });
 </script>
+
 
 
 <header>
