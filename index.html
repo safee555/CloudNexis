@@ -279,6 +279,45 @@
 
     /* Accessibility helper */
     .visually-hidden{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+/* Mobile Header Fix */
+@media (max-width: 600px){
+
+  /* Reduce header height and padding */
+  header{
+    padding: 8px 10px;
+  }
+
+  /* Smaller logo */
+  .logo{
+    width: 150px;
+    margin-bottom: 6px;
+  }
+
+  /* Make navigation smaller and fit in one line */
+  nav{
+    gap: 10px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    justify-content: flex-start;
+    scrollbar-width: none;     /* hide scrollbar for Firefox */
+  }
+  nav::-webkit-scrollbar{
+    display:none;              /* hide scrollbar for Chrome/Safari */
+  }
+
+  nav a{
+    font-size: 0.78rem;
+    padding: 6px 8px;
+    white-space: nowrap;        /* keep buttons on one single line */
+  }
+
+  /* Reduce popup width on mobile as well */
+  #servicePopup, #contactPopup{
+    max-width: 94%;
+    padding: 16px;
+  }
+}
+    
   </style>
 </head>
 <body>
